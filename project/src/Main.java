@@ -39,4 +39,42 @@ void main() {
     else{
         System.out.println("Is it a palindrome?: False");
     }
+
+    System.out.println("------------------------------UC4---------------------------");
+
+    String input1 = "radar";
+
+    // Convert the string into a character array.
+    char[] chars = input1.toCharArray();
+
+    // Initialize pointer at the beginning.
+    int start = 0;
+
+    // Initialize pointer at the end.
+    int end = chars.length - 1;
+
+    // Assume palindrome initially.
+    boolean isPalindrome = true;
+
+    // Continue comparison until pointers cross.
+    while (start < end) {
+        // Compare characters at the current pointers
+        if (chars[start] != chars[end]) {
+            isPalindrome = false;
+            break; // Exit loop if a mismatch is found
+        }
+        // Move pointers towards the center
+        start++;
+        end--;
+    }
+
+    // --- LOGIC FROM IMAGE END ---
+
+    // Display the validation result
+    System.out.println("Input String: " + input1);
+    if (isPalindrome) {
+        System.out.println("Result: The string is a palindrome.");
+    } else {
+        System.out.println("Result: The string is NOT a palindrome.");
+    }
 }
