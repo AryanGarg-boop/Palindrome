@@ -77,4 +77,39 @@ void main() {
     } else {
         System.out.println("Result: The string is NOT a palindrome.");
     }
+
+    System.out.println("----------------------------UC5-------------------------------");
+
+    // Declare and initialize the input string.
+    String input2 = "noon";
+
+    // Create a Stack to store characters.
+    Stack<Character> stack = new Stack<>();
+
+    // Push each character of the string into the stack.
+    for (char c : input2.toCharArray()) {
+        stack.push(c);
+    }
+
+    // Assume palindrome initially.
+    isPalindrome = true;
+
+    // Iterate again through original string to compare with popped values.
+    for (char c : input2.toCharArray()) {
+        // Pop from stack (LIFO gives the characters in reverse)
+        if (c != stack.pop()) {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+    // --- LOGIC FROM IMAGE END ---
+
+    // Output results to console
+    System.out.println("Input String: " + input2);
+    if (isPalindrome) {
+        System.out.println("Result: The string is a palindrome.");
+    } else {
+        System.out.println("Result: The string is NOT a palindrome.");
+    }
 }
