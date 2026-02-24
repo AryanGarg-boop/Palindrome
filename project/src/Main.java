@@ -132,6 +132,8 @@ void main() {
         }
     }
 
+    System.out.println("----------------------------UC6-------------------------------");
+
     String input4 = "civic";
 
     // Create a Queue to store characters in FIFO (First-In, First-Out) order
@@ -158,6 +160,7 @@ void main() {
             break;
         }
     }
+
 
 
     // --- LOGIC FROM IMAGE END ---
