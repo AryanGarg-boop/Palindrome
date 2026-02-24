@@ -1,6 +1,8 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
 void main() {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
@@ -129,6 +131,34 @@ void main() {
             break; // Exit early if a mismatch is found.
         }
     }
+
+    String input4 = "civic";
+
+    // Create a Queue to store characters in FIFO (First-In, First-Out) order
+    Queue<Character> queue = new LinkedList<>();
+
+    // Create a Stack to store characters in LIFO (Last-In, First-Out) order
+    Stack<Character> stack3 = new Stack<>();
+
+    // Insert each character into both queue and stack
+    for (char c : input.toCharArray()) {
+        queue.add(c);
+        stack3.push(c);
+    }
+
+    // Flag to track palindrome status
+    isPalindrome = true;
+
+    // Compare characters until the queue becomes empty
+    while (!queue.isEmpty()) {
+        // queue.remove() takes from the FRONT (start of string)
+        // stack.pop() takes from the TOP (end of string)
+        if (queue.remove() != stack3.pop()) {
+            isPalindrome = false;
+            break;
+        }
+    }
+
 
     // --- LOGIC FROM IMAGE END ---
 
