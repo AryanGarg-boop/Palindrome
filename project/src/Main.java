@@ -218,6 +218,32 @@ void main() {
     boolean result = check(input7, 0, input7.length() - 1);
     System.out.println("Input: " + input7 + " | Result: " + result);
 
+    System.out.println("----------------------------UC10-------------------------------");
+    String input8 = "A man, a plan, a canal: Panama";
+
+    // Preprocessing: Remove all non-alphanumeric characters and convert to lowercase
+    String normalized = input8.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+    // Assume the string is a palindrome initially
+    isPalindrome = true;
+
+    // --- LOGIC FROM HINT START ---
+    // Compare characters from both ends moving towards the center
+    for (int i = 0; i < normalized.length() / 2; i++) {
+
+        // Compare symmetric characters
+        if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
+            isPalindrome = false;
+            break; // Exit loop early if a mismatch is found
+        }
+    }
+    // --- LOGIC FROM HINT END ---
+
+    // Output results
+    System.out.println("Original String: " + input8);
+    System.out.println("Normalized String: " + normalized);
+    System.out.println("Result: Is it a palindrome? " + isPalindrome);
+
 
     // --- LOGIC FROM IMAGE END ---
 
