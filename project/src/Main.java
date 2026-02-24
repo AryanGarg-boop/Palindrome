@@ -278,6 +278,38 @@ public class PalindromeManager {
         // --- NEW UC12 LOGIC END ---
 
 
+
+        System.out.println("----------------------------UC13-------------------------------");
+        /**
+         * Use Case 13: Performance Comparison
+         * Measures and compares the execution performance of algorithms.
+         */
+        String input13 = "A man a plan a canal Panama";
+        String normalized13 = input13.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+
+        // Use a palindrome strategy implementation
+        PalindromeStrategy performanceStrategy = new StackStrategy();
+
+        // 1. Capture execution start time
+        long startTime = System.nanoTime();
+
+        // 2. Execute the validation
+        boolean result13 = performanceStrategy.check(normalized13);
+
+        // 3. Capture execution end time
+        long endTime = System.nanoTime();
+
+        // 4. Calculate total execution duration
+        long duration = endTime - startTime;
+
+        // 5. Display benchmarking results
+        System.out.println("Input String: " + input13);
+        System.out.println("Strategy Used: StackStrategy");
+        System.out.println("Result: " + result13);
+        System.out.println("Execution Time: " + duration + " nanoseconds");
+
+        System.out.println("---------------------------------------------------------------");
+
         // --- LOGIC FROM IMAGE END ---
 
         // Output results to console
