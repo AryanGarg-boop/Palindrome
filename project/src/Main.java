@@ -3,6 +3,10 @@
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+import
 void main() {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
@@ -180,6 +184,30 @@ void main() {
     while (deque.size() > 1) {
         // Remove and compare characters from both ends
         if (deque.removeFirst() != deque.removeLast()) {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+
+    System.out.println("----------------------------UC7-------------------------------");
+
+    String input6 = "level";
+
+    // Create a LinkedList to store characters
+    LinkedList<Character> list1 = new LinkedList<>();
+
+    // Add each character to the linked list
+    for (char c : input6.toCharArray()) {
+        list1.add(c);
+    }
+
+    // Flag to track palindrome state
+    isPalindrome = true;
+
+    // Compare until only one or zero elements remain
+    while (list1.size() > 1) {
+        if (list1.removeFirst() != list1.removeLast()) {
             isPalindrome = false;
             break;
         }
