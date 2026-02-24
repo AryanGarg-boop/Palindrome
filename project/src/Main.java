@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import
 void main() {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
@@ -190,7 +189,7 @@ void main() {
     }
 
 
-    System.out.println("----------------------------UC7-------------------------------");
+    System.out.println("----------------------------UC8-------------------------------");
 
     String input6 = "level";
 
@@ -213,6 +212,12 @@ void main() {
         }
     }
 
+    System.out.println("----------------------------UC9-------------------------------");
+
+    String input7 = "radar";
+    boolean result = check(input7, 0, input7.length() - 1);
+    System.out.println("Input: " + input7 + " | Result: " + result);
+
 
     // --- LOGIC FROM IMAGE END ---
 
@@ -224,3 +229,15 @@ void main() {
         System.out.println("Result: The string is NOT a palindrome.");
     }
 }
+
+private static boolean check(String s, int start, int end) {
+    if (start >= end) {
+        return true;
+    }
+    if (s.charAt(start) != s.charAt(end)) {
+        return false;
+    }
+    return check(s, start + 1, end - 1);
+}
+
+
