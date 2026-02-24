@@ -262,6 +262,22 @@ public class PalindromeManager {
         }
 
 
+        System.out.println("----------------------------UC12-------------------------------");
+        String testInput = "radar";
+
+        // Select the strategy (Stack-based)
+        // This demonstrates the Strategy Design Pattern for interchangeable algorithms
+        PalindromeStrategy strategy = new StackStrategy();
+
+        // Execute the selected algorithm
+        boolean result12 = strategy.check(testInput);
+
+        System.out.println("Strategy: Stack-based");
+        System.out.println("Input: " + testInput);
+        System.out.println("Result: Is it a palindrome? " + result12);
+        // --- NEW UC12 LOGIC END ---
+
+
         // --- LOGIC FROM IMAGE END ---
 
         // Output results to console
@@ -281,6 +297,35 @@ public class PalindromeManager {
             return false;
         }
         return check(s, start + 1, end - 1);
+    }
+}
+
+
+interface PalindromeStrategy {
+    boolean check(String input);
+}
+
+/**
+ * Concrete implementation using a Stack (LIFO) behavior to reverse characters.
+ */
+class StackStrategy implements PalindromeStrategy {
+    @Override
+    public boolean check(String input) {
+        // Create a stack to store characters
+        java.util.Stack<Character> stack = new java.util.Stack<>();
+
+        // Push each character of the input string onto the stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        // Compare characters by popping from the stack (LIFO)
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
