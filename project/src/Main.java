@@ -1,5 +1,6 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Stack;
 void main() {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
@@ -103,10 +104,36 @@ void main() {
         }
     }
 
+
+    String input3 = "nooni";
+
+    // Create a Stack to store characters.
+    Stack<Character> stack2 = new Stack<>();
+
+    // 1. Push each character of the string into the stack.
+    for (char c : input3.toCharArray()) {
+        stack2.push(c);
+    }
+
+    // Assume palindrome initially.
+    isPalindrome = true;
+
+    // 2. Iterate again through original string.
+    for (char c : input3.toCharArray()) {
+        // Pop the character from the stack (this gives characters in reverse).
+        char reverseChar = stack2.pop();
+
+        // Compare original character with the reversed character.
+        if (c != reverseChar) {
+            isPalindrome = false;
+            break; // Exit early if a mismatch is found.
+        }
+    }
+
     // --- LOGIC FROM IMAGE END ---
 
     // Output results to console
-    System.out.println("Input String: " + input2);
+    System.out.println("Input String: " + input3);
     if (isPalindrome) {
         System.out.println("Result: The string is a palindrome.");
     } else {
