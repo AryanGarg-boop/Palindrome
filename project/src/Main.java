@@ -132,6 +132,8 @@ void main() {
         }
     }
 
+    System.out.println("----------------------------UC7-------------------------------");
+
     String input4 = "civic";
 
     // Create a Queue to store characters in FIFO (First-In, First-Out) order
@@ -154,6 +156,30 @@ void main() {
         // queue.remove() takes from the FRONT (start of string)
         // stack.pop() takes from the TOP (end of string)
         if (queue.remove() != stack3.pop()) {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+    System.out.println("----------------------------UC7-------------------------------");
+
+    String input5 = "refer";
+
+    // Create a Deque to store characters
+    Deque<Character> deque = new ArrayDeque<>();
+
+    // Add each character to the deque
+    for (char c : input5.toCharArray()) {
+        deque.add(c);
+    }
+
+    // Flag to track palindrome result
+    isPalindrome = true;
+
+    // Continue comparison while more than one element exists
+    while (deque.size() > 1) {
+        // Remove and compare characters from both ends
+        if (deque.removeFirst() != deque.removeLast()) {
             isPalindrome = false;
             break;
         }
